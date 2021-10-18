@@ -1,8 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
+const usersRoutes = require('./routes/users');
+const commentsRoutes = require('.routes/comments');
+
+const helmet = require('helmet');
 
 // Création d'une application express
 const app = express();
+
+app.use(helmet());
 
 //Résolution erreur CORS
 app.use((req, res, next) => {
@@ -14,11 +21,11 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
-app.post('/api/stuff', (req, res, next) => {
-    console.log(req.body);
-    res.status(201).json({
-      message: 'TEST !'
-    });
-  });
+app.use(express.json());
+
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.use('/api/users', usersRoutes);
+app.use('/api/comments', commentsRoutes);
 
 module.exports = app;
