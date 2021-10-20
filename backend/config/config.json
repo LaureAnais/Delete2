@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "projet7Admin",
+    "password": true,
+    "database": "groupomania_chat",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "projet7Admin",
+    "password": true,
+    "database": "groupomania_chat",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "projet7Admin",
+    "password": true,
+    "database": "groupomania_chat",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

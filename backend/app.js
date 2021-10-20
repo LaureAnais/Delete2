@@ -19,6 +19,9 @@ app.use((req, res, next) => {
     next();
   });
 
+// DB Connection
+require("./src/database/connection");
+
 app.use(bodyParser.json());
 
 app.use(express.json());
