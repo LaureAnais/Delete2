@@ -12,6 +12,7 @@ module.exports = async () => {
         console.error("Error: ", err);
     }
         
+    // TEST UNIQUEMENT 
 
    const user = await User.create({ 
        email: 'alexia.w@gmail.com', 
@@ -24,5 +25,8 @@ module.exports = async () => {
     })
    .catch(errHandler);
 
-
+   const comment = await Comment.create({ 
+        content: 'I like Alexia'
+   })
+   .catch(errHandler);
 };
